@@ -1,6 +1,10 @@
-type 'MCMD' {
+/*
+
+*/
+
+type 'Mcmd' {
 	integer = $$CountOf(Commands);
 	array Commands {
-		integer;			// list of commands
+		longint;			// list of commands
 		};
 };
