@@ -87,7 +87,7 @@ After you get these tools, and are finished reading this document, I recommend y
 
 The main window contains values that you can edit, such as the menu bar height or the width of the scrollbar thumbs. Note that changing some of these values might still require you to edit the affected layo(s) to get the value to display correctly.
 
-Full Size (294 x 462) - 17K
+![Main_Win_SM](https://user-images.githubusercontent.com/11298402/194812070-3446760f-2d5c-481b-8813-59ed9b103559.gif)
 
 In brief, what the various items in the window describe:
 
@@ -107,7 +107,7 @@ These items can also be found (and edited using something like Resorcerer and a 
 
 You can now copy & paste icons, although there are probably better programs to do this with. Use the popup menu to select the icon to edit (note that the icon currently has to be present in the appearance already for it to be available in the menu). The easiest way to add icons to an appearance that doesn’t have them is to copy the appropriate resources from a theme that does and edit those.
 
-Full Size (294 x 106) - 6K
+![Icons_SM](https://user-images.githubusercontent.com/11298402/194812096-48a6a273-2910-4e5e-a947-d0c4b75ffc0c.gif)
 
 You’ll need to copy all the icns (icon suite) and tic# resources from the donor appearance to the one you’re working on. There should be quite a few of the icns resources and one tic# resource (id 384). The tic# resource contains a list of all the icns resources used by the appearance, if you want to add any new icns resources you will need to edit the tic# resource with a resource editor that supports that resource type or uses our templates to support that resource type. Both Resorcerer and Resurrection either support the tic# resource directly or work with our templates.
 
@@ -130,7 +130,7 @@ These control the various text colors used in windows and other parts of the app
 
 These are things like window backgrounds, though the inactive window backgrounds don’t actually seem to be used for anything. They might be used by some future revision of the system software though, so you might as well set them up how you'd want them to work, in an ideal world. The box on the left shows the pattern (if any) assigned to this item and the one on the right shows the standard color assigned to this item.
 
-    Full Size (309 x 125) - 7K
+![RequiredBrushes_SM](https://user-images.githubusercontent.com/11298402/194812118-67f15d48-0b30-45a4-9721-b00c5406577e.gif)
 
 These items (and more not present here) can also be seen (and edited, etc.) in the clr# resource using one of the resource editors that support our templates.
 
@@ -140,7 +140,7 @@ A blank item in the list is an item for which no definition has been entered, bu
 
 Since I brought it up, this is what the brush editor looks like. You can edit the entry by one of three ways: by double-clicking the top box (which represents the standard color), by editing the three RGB values directly (typing in numbers from 0-65535), and by pasting in something to the larger bottom box. The picture shows the top box with focus, you'll have to click on the bottom box to direct the focus there before copying or pasting though.
 
-    Full Size (205 x 262) - 8K
+![BrushEditor_SM](https://user-images.githubusercontent.com/11298402/194812123-f38fd407-9893-447c-9d43-39efa337ab1c.gif)
 
 You can also drag & drop colors/patterns from one palette to another (both the color and pattern get copied).
 
@@ -150,16 +150,14 @@ One more thing about using patterns in these window backgrounds - they can cause
 
 These are all other brushes present in the theme. You’ll probably use these for a large variety of things (frmes, among other things). The brushes can be either a solid color (the right box) or a pattern (the left box). The new brush button creates a new brush entry (defaults to black). Deleting a brush will remove the highlighted brush - but be aware that this may cause undesirable results due to how brushes are referenced. To be more precise, the brushes are referenced by number, if you delete a brush not at the end of the list, all objects that reference brushes after the one you deleted will be offset by one (and that's not good for anybody). A better choice would be to change the brush you don't like if it's in the middle of your list, or to ignore it. You can't delete a brush reference from the brush editor, but you can drag & drop a brush that doesn't have one and then edit the color.
 
-
-    Full Size (309 x 157) - 9K
+![UserBrushes_SM](https://user-images.githubusercontent.com/11298402/194812152-6fdbf3f5-bc00-46c9-9b63-83e251650a3e.gif)
 
 1. Magnifier
     This provides a real-time magnifying effect where the cursor is positioned. This can be useful when you’re testing something out and want to get a magnified view to make sure it’s working correctly. The magnify palette is meant to work when context is switched outside of the program (which lets you magnify wherever you like) so don’t include it in the misbehaving palette list.
 
+![Magnifier_SM](https://user-images.githubusercontent.com/11298402/194812176-80873f71-ba9d-40ea-bf99-8f7287ebb0de.gif)
 
-2. Full Size (213 x 229) - 10K
-
-    Brush patterns
+2. Brush patterns
     One thing you need to be aware of is that the brushes you paste are subject to manipulation by Quickdraw to fit into an appropriate color space (or something like that). That means that you'll want to use 32-bit (as in, you should be in 32-bit color mode on your monitor) brushes for best results and switch to an indexed color space in Photoshop before you copy & paste that data into Theme Machine. The color results with indexed color seem to work out better, and it avoids a bug in the paste routine that can introduce some extraneous color information). I generally (when I remember about it) use a Photoshop action to do this so I don't have to step through the dialogs. If you have another program you like to edit and/or create ppat resources with, you can assign patterns directly to the colors by editing the plut resources in the theme file and an appropriate resource editor.
 
 ## The pxm# editor
@@ -170,7 +168,7 @@ Since we've spent a considerable amount of time benchmarking what objects draw t
 
 The color handling routines have also been reworked, this should allow you to throw away Pixie. Well, maybe not. Sometimes Pixie comes up with better color information (dithering, or lack thereof), though I'm not sure why that is. Be sure to convert to an indexed color space before copying the image you want to paste into the pxm# window for best results.
 
-Full Size (469 x 351) - 10K
+![PxmEditor_SM](https://user-images.githubusercontent.com/11298402/194812217-675b154a-99ad-469c-af9e-d725c135e8f2.gif)
 
 This version also shows the index of the image you’re working on (e.g. 1 of 12) and the dimension of the pxm#.
 
@@ -196,10 +194,7 @@ There are two types of frme - required and user, accessed through the appropriat
 
 This is what it looks like:
 
-Full Size (415 x 489) - 25K
-
-Pretty, isn't it?
-
+![FrmeEditor_SM](https://user-images.githubusercontent.com/11298402/194812286-0e71097e-f628-4a8a-8a5f-118214fab71e.gif)
 
 ### The frme editor window
 
@@ -239,7 +234,7 @@ Note that all of the frmes currently created by the editor are currently the mor
 
 The layo editor is currently unimplemented, but you can use this as a preview approximation of how the various layo items will look with the current appearance. Note that some items won’t look like they would in the real world since the content size is constant (and suited to a window).
 
-Full Size (615 x 471) - 33K
+![LayoEditor_SM](https://user-images.githubusercontent.com/11298402/194812307-aceb06fb-5373-4788-a35c-0efff3361d44.gif)
 
 You can use the checkboxes to control whether certain items are shown or not. The feature flags aren’t really useful at this point.
 
